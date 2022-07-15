@@ -33,8 +33,15 @@
             <ul class="list-group">
                 <% for (let i = 0; i < notes.length; i++) { %>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <%= notes[i].title %>
                         <div>
+                            <div data-type="title">
+                                <%= notes[i].title %>
+                            </div>
+                            <input class="d-none form-control" data-type="title-input" />
+                        </div>
+                        <div>
+                            <button class="btn btn-success d-none" data-type="save" data-id="<%= notes[i].id %>">Save</button>
+                            <button class="btn btn-danger d-none" data-type="cancel" data-id="<%= notes[i].id %>">Cancel</button>
                             <button class="btn btn-primary" data-type="edit" data-id="<%= notes[i].id %>">Edit</button>
                             <button class="btn btn-danger" data-type="remove" data-id="<%= notes[i].id %>">&times;</button>
                         </div>
