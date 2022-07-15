@@ -7,9 +7,11 @@ document.addEventListener('click',  (event) => {
     } else if (event.target.dataset.type === 'edit') {
         const id = event.target.dataset.id
         const newTitle = prompt('Input new title')
-        edit(id, newTitle).then(() => {
-            event.target.closest('li').firstChild.textContent = newTitle
-        })
+        if (newTitle) {
+            edit(id, newTitle).then(() => {
+                event.target.closest('li').firstChild.textContent = newTitle
+            })
+        }
     }
 })
 
