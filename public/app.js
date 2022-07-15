@@ -15,12 +15,12 @@ document.addEventListener('click',  (event) => {
         })
     }
     else if (type === 'edit') {
-        toogleEdit()
+        toggleEdit()
         const titleValue = title.textContent
         titleInput.value = titleValue.trim()
         titleInput.focus()
     } else if (type === 'save') {
-        toogleEdit()
+        toggleEdit()
         const id = event.target.dataset.id
         const newTitle = titleInput.value.trim()
         if (newTitle) {
@@ -31,10 +31,10 @@ document.addEventListener('click',  (event) => {
         }
 
     } else if (type === 'cancel') {
-        toogleEdit()
+        toggleEdit()
     }
 
-    function toogleEdit() {
+    function toggleEdit() {
         saveBtn.classList.toggle('d-none')
         cancelBtn.classList.toggle('d-none')
         editBtn.classList.toggle('d-none')
